@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String Manipulation</title>
+</head>
+<body>
+
+
+<p id="original"></p>
+
+
+<p id="result"></p>
+
+<script>
+  // JavaScript code
+  var str = "The Quick Brown Fox";
+  
+  // Display original string
+  document.getElementById("original").innerHTML = "Original String: " + str;
+
+  // Manipulate string
+  var result = str.split("").map(item => (item === item.toUpperCase() ? item.toLowerCase() : item.toUpperCase())).join("");
+
+  // Display resulting string
+  document.getElementById("result").innerHTML = "Resulting String: " + result;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Formatting</title>
+</head>
+<body>
+    <h1>Date Formatting Example</h1>
+
+    <div id="dateFormats">
+        <p>Formatted Dates:</p>
+        <ul>
+            <li><span id="dateFormat1"></span></li>
+            <li><span id="dateFormat2"></span></li>
+            <li><span id="dateFormat3"></span></li>
+            <li><span id="dateFormat4"></span></li>
+        </ul>
+    </div>
+
+    <script>
+        // Get the current date
+        var today = new Date();
+
+        // Get the day of the month
+        var dd = today.getDate();
+
+        // Get the month (adding 1 because months are zero-based)
+        var mm = today.getMonth() + 1;
+
+        // Get the year
+        var yyyy = today.getFullYear();
+
+        // Add leading zero if the day is less than 10
+        if (dd < 10) {
+            dd = '0' + dd;
+        } 
+
+        // Add leading zero if the month is less than 10
+        if (mm < 10) {
+            mm = '0' + mm;
+        } 
+
+        // Format the date as mm-dd-yyyy and display it
+        var dateFormat1 = mm + '-' + dd + '-' + yyyy;
+        document.getElementById('dateFormat1').textContent = dateFormat1;
+
+        // Format the date as mm/dd/yyyy and display it
+        var dateFormat2 = mm + '/' + dd + '/' + yyyy;
+        document.getElementById('dateFormat2').textContent = dateFormat2;
+
+        // Format the date as dd-mm-yyyy and display it
+        var dateFormat3 = dd + '-' + mm + '-' + yyyy;
+        document.getElementById('dateFormat3').textContent = dateFormat3;
+
+        // Format the date as dd/mm/yyyy and display it
+        var dateFormat4 = dd + '/' + mm + '/' + yyyy;
+        document.getElementById('dateFormat4').textContent = dateFormat4;
+    </script>
+</body>
+</html>
+
