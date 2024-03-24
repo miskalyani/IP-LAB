@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <h2>Temperature Converter</h2>
+    <form action="ConvertServlet" method="post">
+        Enter temperature in Celsius: <input type="text" name="celsius">
+        <input type="submit" value="Convert">
+    </form>
+    <h2>List of Famous People</h2>
+    <ul>
+        <li><a href="BiographyServlet?name=Mahendra%20Singh%20Dhoni">Mahendra Singh Dhoni</a></li>
+        <li><a href="BiographyServlet?name=Kamal%20Hassan">Kamal Hassan</a></li>
+        <li><a href="BiographyServlet?name=AR%20Rahman">AR Rahman</a></li>
+        <li><a href="BiographyServlet?name=Virat%20Kohli">Virat Kohli</a></li>
+    </ul>
+    <br>
+     <h2>Enter Your Name</h2>
+    <form action="SaveNameServlet" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
