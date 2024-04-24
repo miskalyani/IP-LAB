@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Details</title>
+</head>
+<body>
+  <label for="movieId">Enter Movie ID:</label>
+  <input type="text" id="movieId" name="movieId">
+  <button onclick="getMovieDetails()">Get Movie Details</button>
+  <div id="movieDetails"></div>
+
+  <script>
+    function getMovieDetails() {
+      let movieId = document.getElementById('movieId').value;
+      let xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          displayMovieDetails(this);
+        }
+      };
+      xhttp.open("GET", "movies.xml", true);
+      xhttp.send();
+    }
+
+    function displayMovieDetails(xml) {
+      const xmlDoc = xml.responseXML;
+      const movieId = document.getElementById('movieId').value;
+      const movies = xmlDoc.getElementsByTagName('movie');
+      for (let i = 0; i < movies.length; i++) {
+        const id = movies[i].getElementsByTagName('id')[0].childNodes[0].nodeValue;
+        if (id === movieId) {
+          const title = movies[i].getElementsByTagName('title')[0].childNodes[0].nodeValue;
+          const director = movies[i].getElementsByTagName('director')[0].childNodes[0].nodeValue;
+          const year = movies[i].getElementsByTagName('year')[0].childNodes[0].nodeValue;
+          document.getElementById('movieDetails').innerHTML = `<h2>${title}</h2><p>Director: ${director}</p><p>Year: ${year}</p>`;
+          return;
+        }
+      }
+      document.getElementById('movieDetails').innerHTML = "<p>Movie not found.</p>";
+    }
+  </script>
+</body>
+</html>
+
