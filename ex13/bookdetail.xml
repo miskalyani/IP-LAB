@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="bookdetail.xsl"?>
+
+
+
+<books>
+    <book>
+        <title>A Tale Of Two Cities </title>
+        <author>Charles Dickens</author>
+        <genre>	Historical fiction</genre>
+        <price>29</price>
+        
+    </book>  
+     <book>
+        <title>The Little Prince </title>
+        <author>Antoine de Saint-Exupéry</author>
+        <genre>Adventure</genre>
+        <price>26</price>     
+    </book>  
+    <book>
+        <title>The Lord of the Rings  </title>
+        <author> JRR Tolkien</author>
+        <genre>Fantasy</genre>
+        <price>18</price>     
+    </book> 
+    <book>
+        <title>And Then There Were None </title>
+        <author>Agatha Christie</author>
+        <genre>Mystery</genre>
+        <price>28</price>     
+    </book> 
+    <book>
+        <title>The Da Vinci Code</title>
+        <author> Dan Brown</author>
+        <genre>Mystery</genre>
+        <price>25</price>     
+    </book>    
+    
+    
+</books>
